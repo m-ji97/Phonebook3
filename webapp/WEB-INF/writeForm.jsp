@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
 
 <!DOCTYPE html>
 <html>
@@ -20,6 +21,7 @@
 </p>
 
 <form action="http://localhost:8080/phonebook3/pbc" method="get">
+<c:forEach items="${requestScope.personList}" var="personVo">
 	<div>	
 	<label>이름(name)</label>
 	<input type="text" name="name" value="">
@@ -41,6 +43,7 @@
 
 <br><br>
 <a href="">리스트페이지로 이동</a>
+</c:forEach>
 
 </body>
 </html>
